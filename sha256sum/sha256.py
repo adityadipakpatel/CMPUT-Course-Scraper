@@ -244,3 +244,11 @@ def sha_256(input_string):
                   hex_return(hash_6),
                   hex_return(hash_7))
     return(final_hash)
+
+def main(input_string):
+    tmp_list = [i for i in sha_256(str(input_string))]
+    tmp_str = ''.join(tmp_list)
+    print(f"{tmp_str}  -")
+
+main(str(input("Enter some text: ")))
+
