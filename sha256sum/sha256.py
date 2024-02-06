@@ -135,9 +135,7 @@ def not_str(bit_string):
             not_list.append('0')
     return(l_s(not_list))
 
-'''
-SHA-256 Specific Functions:
-'''
+#SHA256 unique functions:
 
 def Ch(x,y,z):
     return(xor_2str(and_2str(x,y),and_2str(not_str(x),z)))
@@ -184,9 +182,7 @@ def message_schedule(index,w_t):
     new_word = bin_32bit(mod_32_addition([int(s_1(w_t[index-2]),2),int(w_t[index-7],2),int(s_0(w_t[index-15]),2),int(w_t[index-16],2)]))
     return(new_word)
 
-'''
-This example of SHA_256 works for an input string <56 characters.
-'''
+#This works only on strings <56 chars
 
 def sha_256(input_string):
     assert len(input_string) < 56, "This example of SHA_256 works for an input string <56 characters."
